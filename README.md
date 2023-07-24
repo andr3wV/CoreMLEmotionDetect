@@ -21,7 +21,7 @@ The base model was frozen and new classifier dense layers were added on top and 
 
 The model was trained for 30 epochs using the Adam optimizer and categorical cross-entropy loss. Test accuracy reached ~70%.
 
-Also included is a non VGGFace (facial-expression-recognition50.ipynb) which achieved an accuracy of ~55%. 
+I also made a non VGGFace model [here](https://colab.research.google.com/drive/1ljnCpndHomjXc5PDkJ2gsF9hbuMgynwg?usp=sharing) which achieved a worse accuracy of ~55%. 
 
 ## Results 
 
