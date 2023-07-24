@@ -2,10 +2,11 @@
 # Real-Time Emotion Detection iOS App with Machine Learning
 
 ![App Demo](images/cover-image.png)
+![App Demo](images/cover-image2.png)
 
 This repo contains a real-time facial emotion detection iOS application developed as a personal project. The app utilizes CoreML with SwiftUI to provide an intuitive and interactive user experience.
 
-This project builds a convolutional neural network (CNN) model to classify facial expressions from pixel images of faces. The model is trained and evaluated on the [ICML 2013 Face Expression Recognition Challenge](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge) dataset.
+This project builds a convolutional neural network (CNN) model to classify facial expressions from pixel images of faces. A Notebook is provided to train a facial expression recognition model using transfer learning with VGGFace on the FER2013 dataset. The model is trained and evaluated on the [ICML 2013 Face Expression Recognition Challenge](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge) dataset.
 
 
 ## Data
@@ -14,31 +15,26 @@ The dataset contains 35,887 grayscale 48x48 pixel face images with 7 emotions (a
 
 ## Model
 
-A CNN model with the following architecture is defined:
+A pre-trained [VGGFace](https://arxiv.org/abs/1710.08092) model was used for transfer learning. VGGFace is a convolutional neural network trained on a large facial image dataset for face recognition.
 
-- Conv2D layers
-- MaxPooling
-- Dropout 
-- Batch normalization
-- Dense layers
-- Softmax output layer
+The base model was frozen and new classifier dense layers were added on top and trained for facial expression classification into 7 classes.
 
-The model is trained for 50 epochs using the Adam optimizer and categorical cross-entropy loss.
+The model was trained for 30 epochs using the Adam optimizer and categorical cross-entropy loss. Test accuracy reached ~70%.
+
+Also included is a non VGGFace (facial-expression-recognition50.ipynb) which achieved an accuracy of ~55%. 
 
 ## Results 
 
-The model achieves the following accuracy on the test set:
+The model achieves ~70% accuracy on the test set. Analysis of the confusion matrix shows the model performs very well on the "happy" class with high precision and recall. It struggles more with "fear" and "sad" which are commonly misclassified as one another. 
 
-![](images/accuracy.png)
-This indicates some overfitting on the training data. 
+![Confusion Matrix](images/confusion-matrix.png)  
 
-Analysis of individual test image predictions shows the model is generally able to predict the correct expression, but struggles with some subtle/ambiguous expressions.  The model performs very well for the "happy" class and reasonably well for other expressions, but commonly confuses "disgust", "fear", and "sadness".
+The model shows decent precision and recall for "angry", "disgust", "surprise" and "neutral" but still commonly confuses between some classes like "sad" and "fear". 
+
+Overall the model achieves reasonable but not excellent performance on this dataset. Some ways to potentially improve accuracy include tuning hyperparameters, training on more varied data, and exploring different model architectures.
 
 ![](images/accuracy2.png)
 ![](images/accuracy3.png)
-![](images/accuracy4.png)
-
-Overall the model achieves decent but not excellent performance on this dataset. Some ways to potentially improve accuracy include tuning hyperparameters, training on more data, and exploring different model architectures.
 
 ## Installation
 
