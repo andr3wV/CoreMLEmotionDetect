@@ -29,14 +29,14 @@ The model is trained for 50 epochs using the Adam optimizer and categorical cros
 
 The model achieves the following accuracy on the test set:
 
-[](images/accuracy.png)
+![](images/accuracy.png)
 This indicates some overfitting on the training data. 
 
 Analysis of individual test image predictions shows the model is generally able to predict the correct expression, but struggles with some subtle/ambiguous expressions.  The model performs very well for the "happy" class and reasonably well for other expressions, but commonly confuses "disgust", "fear", and "sadness".
 
-[](images/accuracy2.png)
-[](images/accuracy3.png)
-[](images/accuracy4.png)
+![](images/accuracy2.png)
+![](images/accuracy3.png)
+![](images/accuracy4.png)
 
 Overall the model achieves decent but not excellent performance on this dataset. Some ways to potentially improve accuracy include tuning hyperparameters, training on more data, and exploring different model architectures.
 
