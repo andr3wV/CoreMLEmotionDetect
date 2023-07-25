@@ -10,44 +10,39 @@ import AVFoundation
 import Vision
  
 struct ContentView: View {
-//    Background color of the UI page
-    let emotionColors: [String: Color] = ["happy": .yellow,
-                                             "sad": .blue,
-                                             "angry": .red,
-                                             "fear": .purple,
-                                             "neutral": .gray,
-                                             "surprise": .pink,
-                                             "disgust": .green]
-
-//    Current image. change in @StateObject property will rerender view
+    @State var color = Color.white
     @StateObject var sharedImage = BMSharedImage()
     
-    var currentColor: Color {
-           return emotionColors[sharedImage.emotion] ?? .white
-        }
+    let emotionColors: [String: Color] = ["happy": .yellow,
+                                         "sad": .blue,
+                                         "angry": .red,
+                                         "fear": .purple,
+                                         "neutral": .gray,
+                                         "surprise": .pink,
+                                         "disgust": .green]
     
     var body: some View {
         VStack() {
-//            In order to update the image we need propagate it to UI controller that encapsulates camera logic
             CustomCameraRepresentable(sharedImage: sharedImage)
             
-            Image(uiImage: UIImage(named: sharedImage.emotion)!)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .edgesIgnoringSafeArea(.bottom)
-                .overlay(
-                    VStack() {
-                        if let fgr = sharedImage.fgr, let pha = sharedImage.pha {
-                            Image(uiImage: fgr).normalize().mask(
-                                Image(uiImage: pha).normalize()
-                            )
-                        }
-                        Text("\(sharedImage.emotion), \(String(format: "%.4f", sharedImage.emotionProbability))")
-                            .background(.white, ignoresSafeAreaEdges: .bottom)
-                            .padding()
-                    }
-                )
-                .background(currentColor.ignoresSafeArea().animation(.easeInOut(duration: 1.0), value: currentColor))
+            VStack() {
+                if let fgr = sharedImage.fgr, let pha = sharedImage.pha {
+                    Image(uiImage: fgr).normalize().mask(
+                        Image(uiImage: pha).normalize()
+                    )
+                }
+                Text("\(sharedImage.emotion), \(String(format: "%.4f", sharedImage.emotionProbability))")
+                    .background(.white, ignoresSafeAreaEdges: .bottom)
+                    .padding()
+            }
+        }
+        .background(color)
+        .onChange(of: sharedImage.emotion) { newValue in
+            if let newColor = emotionColors[newValue] {
+                withAnimation(.easeIn(duration: 1.0)) {
+                    color = newColor
+                }
+            }
         }
     }
 }

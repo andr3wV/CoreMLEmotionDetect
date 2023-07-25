@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		3032777927E9D9EE0015D575 /* CoreMLEmotionDetect.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreMLEmotionDetect.entitlements; sourceTree = "<group>"; };
 		3060C0B2289BFAAB0004343E /* EmotionDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionDetector.swift; sourceTree = "<group>"; };
-		30993A3927E87272006CE502 /* CoreMLEmotionDetect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMLEmotionDetect.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30993A3927E87272006CE502 /* CoreMLEmotionalBackgrounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreMLEmotionalBackgrounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30993A3C27E87272006CE502 /* CoreMLEmotionDetectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreMLEmotionDetectApp.swift; sourceTree = "<group>"; };
 		30993A3E27E87272006CE502 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30993A4027E87274006CE502 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 		30993A3A27E87272006CE502 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				30993A3927E87272006CE502 /* CoreMLEmotionDetect.app */,
+				30993A3927E87272006CE502 /* CoreMLEmotionalBackgrounds.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 			);
 			name = CoreMLEmotionDetect;
 			productName = CoreMLEmotionDetect;
-			productReference = 30993A3927E87272006CE502 /* CoreMLEmotionDetect.app */;
+			productReference = 30993A3927E87272006CE502 /* CoreMLEmotionalBackgrounds.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -391,7 +391,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrewvittiglio.CoreMLEmotionDetect;
-				PRODUCT_NAME = CoreMLEmotionDetect;
+				PRODUCT_NAME = CoreMLEmotionalBackgrounds;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -424,7 +424,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrewvittiglio.CoreMLEmotionDetect;
-				PRODUCT_NAME = CoreMLEmotionDetect;
+				PRODUCT_NAME = CoreMLEmotionalBackgrounds;
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
