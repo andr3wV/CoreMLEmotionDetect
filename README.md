@@ -1,8 +1,6 @@
 
 # Real-Time Emotion Detection iOS App with Machine Learning
-
-![App Demo](images/cover-image.png)
-![App Demo](images/cover-image2.png)
+![Demo](images/demo.gif)
 
 This repo contains a real-time facial emotion detection iOS application developed as a personal project. The app utilizes CoreML with SwiftUI to provide an intuitive and interactive user experience.
 
@@ -10,10 +8,13 @@ This project builds a convolutional neural network (CNN) model to classify facia
 
 
 ## Data
+![App Demo](images/cover-image.png)
 
 The dataset contains 35,887 grayscale 48x48 pixel face images with 7 emotions (angry, disgust, fear, happy, sad, surprise, neutral). The data is split into train, validation, and test sets. 
 
 ## Model
+
+![App Demo](images/cover-image2.png)
 
 A pre-trained [VGGFace](https://arxiv.org/abs/1710.08092) model was used for transfer learning. VGGFace is a convolutional neural network trained on a large facial image dataset for face recognition.
 
