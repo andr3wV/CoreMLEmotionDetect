@@ -52,7 +52,7 @@ $ git clone https://github.com/andr3wV/CoreMLEmotionDetect.git
 
 4. Build and run the app on a connected iOS device or simulator.
 
-To train the model, follow these steps:
+If you train the model (not necessary for app), follow these steps:
 
 1. Install the notebook dependencies
 ```bash
