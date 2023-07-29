@@ -102,8 +102,9 @@ class CustomCameraController: UIViewController, AVCaptureVideoDataOutputSampleBu
 //        the model doesn't contain any built-in preprocessing related to scaling
 //        so let's transform a video stream to a desired size beforehand
         self.captureSession.sessionPreset = AVCaptureSession.Preset.hd1280x720
-        self.captureSession.startRunning()
-    }
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.captureSession.startRunning()
+        }    }
 
 //    Process output video stream
     func captureOutput(_ output: AVCaptureOutput,
