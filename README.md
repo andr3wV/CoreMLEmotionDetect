@@ -8,14 +8,11 @@ This project builds a convolutional neural network (CNN) model to classify facia
 ![Demo](images/demo.gif)
 
 ## Data
-![App Demo](images/cover-image.png)
-
 The dataset contains 35,887 grayscale 48x48 pixel face images with 7 emotions (angry, disgust, fear, happy, sad, surprise, neutral). The data is split into train, validation, and test sets. 
 
+![App Demo](images/cover-image.png)
+
 ## Model
-
-![App Demo](images/cover-image2.png)
-
 A pre-trained [VGGFace](https://arxiv.org/abs/1710.08092) model was used for transfer learning. VGGFace is a convolutional neural network trained on a large facial image dataset for face recognition.
 
 The base model was frozen and new classifier dense layers were added on top and trained for facial expression classification into 7 classes.
@@ -23,6 +20,8 @@ The base model was frozen and new classifier dense layers were added on top and 
 The model was trained for 30 epochs using the Adam optimizer and categorical cross-entropy loss. Test accuracy reached ~70%.
 
 I also made a non VGGFace model [here](https://colab.research.google.com/drive/1ljnCpndHomjXc5PDkJ2gsF9hbuMgynwg?usp=sharing) which achieved a worse accuracy of ~55%. 
+
+![App Demo](images/cover-image2.png)
 
 ## Results 
 
