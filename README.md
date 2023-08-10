@@ -3,7 +3,7 @@
 
 This repo contains a real-time facial emotion detection iOS application developed as a personal project. The app utilizes CoreML with SwiftUI to provide an intuitive and interactive user experience.
 
-This project builds a convolutional neural network (CNN) model to classify facial expressions from pixel images of faces. A Notebook is provided to train a facial expression recognition model using transfer learning with VGGFace on the FER2013 dataset. The model is trained and evaluated on the [ICML 2013 Face Expression Recognition Challenge](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge) dataset.
+This project builds a convolutional neural network (CNN) model to classify facial expressions from pixel images of faces. A Notebook is provided to train a facial expression recognition model using transfer learning with VGGFace on the [FER2013 dataset](https://www.kaggle.com/datasets/msambare/fer2013).
 
 ![Demo](images/demo.gif)
 
